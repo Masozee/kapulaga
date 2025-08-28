@@ -74,9 +74,10 @@ interface Reservation {
 }
 
 const MOCK_RESERVATIONS: Reservation[] = [
+  // Current/Recent bookings for calendar demonstration
   {
     id: 1,
-    reservation_number: 'RSV123456',
+    reservation_number: 'RSV001',
     guest_name: 'John Smith',
     guest_details: {
       id: 1,
@@ -85,8 +86,8 @@ const MOCK_RESERVATIONS: Reservation[] = [
       phone: '+62-812-1111-0001',
       nationality: 'United States'
     },
-    check_in_date: '2024-08-25',
-    check_out_date: '2024-08-28',
+    check_in_date: '2025-08-26',
+    check_out_date: '2025-08-29',
     nights: 3,
     adults: 2,
     children: 0,
@@ -110,7 +111,7 @@ const MOCK_RESERVATIONS: Reservation[] = [
   },
   {
     id: 2,
-    reservation_number: 'RSV789012',
+    reservation_number: 'RSV002',
     guest_name: 'Maria Rodriguez',
     guest_details: {
       id: 2,
@@ -119,65 +120,66 @@ const MOCK_RESERVATIONS: Reservation[] = [
       phone: '+62-812-1111-0002',
       nationality: 'Spain'
     },
-    check_in_date: '2024-08-24',
-    check_out_date: '2024-08-26',
-    nights: 2,
-    adults: 1,
+    check_in_date: '2025-08-26',
+    check_out_date: '2025-08-30',
+    nights: 4,
+    adults: 2,
     children: 1,
     status: 'CHECKED_IN',
     status_display: 'Checked In',
     booking_source: 'OTA',
     total_rooms: 1,
-    total_amount: 4800000,
+    total_amount: 9600000,
     created_at: '2024-08-20T14:15:00Z',
     rooms: [
       {
         id: 2,
-        room_number: '205',
+        room_number: '201',
         room_type_name: 'Deluxe Room',
         rate: 2400000,
-        total_amount: 4800000
+        total_amount: 9600000
       }
     ],
+    special_requests: 'Extra towels requested',
     can_cancel: false
   },
   {
     id: 3,
-    reservation_number: 'RSV345678',
-    guest_name: 'Ahmad Pratama',
+    reservation_number: 'RSV003',
+    guest_name: 'Ahmed Hassan',
     guest_details: {
       id: 3,
-      full_name: 'Ahmad Pratama',
-      email: 'ahmad.pratama@email.com',
+      full_name: 'Ahmed Hassan',
+      email: 'ahmed.hassan@email.com',
       phone: '+62-812-1111-0003',
-      nationality: 'Indonesia'
+      nationality: 'Egypt'
     },
-    check_in_date: '2024-08-26',
-    check_out_date: '2024-08-29',
-    nights: 3,
-    adults: 2,
-    children: 2,
+    check_in_date: '2025-08-27',
+    check_out_date: '2025-08-31',
+    nights: 4,
+    adults: 1,
+    children: 0,
     status: 'CONFIRMED',
     status_display: 'Confirmed',
     booking_source: 'WEBSITE',
-    total_rooms: 2,
-    total_amount: 10800000,
+    total_rooms: 1,
+    total_amount: 12000000,
     created_at: '2024-08-22T09:15:00Z',
     rooms: [
       {
         id: 3,
         room_number: '301',
-        room_type_name: 'Family Suite',
-        rate: 3600000,
-        total_amount: 10800000
+        room_type_name: 'Junior Suite',
+        rate: 3000000,
+        total_amount: 12000000
       }
     ],
-    special_requests: 'Twin beds for children',
+    special_requests: 'Business center access',
     can_cancel: true
   },
   {
     id: 4,
-    reservation_number: 'RSV901234',
+    reservation_number: 'RSV004',
     guest_name: 'Sarah Johnson',
     guest_details: {
       id: 4,
@@ -186,65 +188,66 @@ const MOCK_RESERVATIONS: Reservation[] = [
       phone: '+62-812-1111-0004',
       nationality: 'Australia'
     },
-    check_in_date: '2024-08-27',
-    check_out_date: '2024-08-30',
-    nights: 3,
-    adults: 1,
-    children: 0,
+    check_in_date: '2025-08-28',
+    check_out_date: '2025-09-02',
+    nights: 5,
+    adults: 2,
+    children: 2,
     status: 'PENDING',
     status_display: 'Pending',
     booking_source: 'OTA',
     total_rooms: 1,
-    total_amount: 6750000,
+    total_amount: 18000000,
     created_at: '2024-08-24T16:20:00Z',
     rooms: [
       {
         id: 4,
-        room_number: '102',
-        room_type_name: 'Standard Room',
-        rate: 2250000,
-        total_amount: 6750000
+        room_number: '401',
+        room_type_name: 'Family Suite',
+        rate: 3600000,
+        total_amount: 18000000
       }
     ],
+    special_requests: 'Connecting rooms if available',
     can_cancel: true
   },
   {
     id: 5,
-    reservation_number: 'RSV567890',
-    guest_name: 'Hiroshi Tanaka',
+    reservation_number: 'RSV005',
+    guest_name: 'Liu Wei',
     guest_details: {
       id: 5,
-      full_name: 'Hiroshi Tanaka',
-      email: 'hiroshi.tanaka@email.com',
+      full_name: 'Liu Wei',
+      email: 'liu.wei@email.com',
       phone: '+62-812-1111-0005',
-      nationality: 'Japan'
+      nationality: 'China'
     },
-    check_in_date: '2024-08-28',
-    check_out_date: '2024-09-01',
-    nights: 4,
-    adults: 2,
+    check_in_date: '2025-08-29',
+    check_out_date: '2025-09-01',
+    nights: 3,
+    adults: 1,
     children: 0,
     status: 'CONFIRMED',
     status_display: 'Confirmed',
     booking_source: 'DIRECT',
     total_rooms: 1,
-    total_amount: 12000000,
+    total_amount: 13500000,
     created_at: '2024-08-21T11:45:00Z',
     rooms: [
       {
         id: 5,
-        room_number: '401',
-        room_type_name: 'Premium Room',
-        rate: 3000000,
-        total_amount: 12000000
+        room_number: '501',
+        room_type_name: 'Presidential Suite',
+        rate: 4500000,
+        total_amount: 13500000
       }
     ],
-    special_requests: 'Vegetarian meals only',
+    special_requests: 'VIP treatment, champagne welcome',
     can_cancel: true
   },
   {
     id: 6,
-    reservation_number: 'RSV234567',
+    reservation_number: 'RSV006',
     guest_name: 'Emma Wilson',
     guest_details: {
       id: 6,
@@ -253,38 +256,32 @@ const MOCK_RESERVATIONS: Reservation[] = [
       phone: '+62-812-1111-0006',
       nationality: 'United Kingdom'
     },
-    check_in_date: '2024-08-29',
-    check_out_date: '2024-09-02',
+    check_in_date: '2025-08-30',
+    check_out_date: '2025-09-03',
     nights: 4,
-    adults: 3,
-    children: 1,
-    status: 'CHECKED_OUT',
-    status_display: 'Checked Out',
+    adults: 2,
+    children: 0,
+    status: 'CONFIRMED',
+    status_display: 'Confirmed',
     booking_source: 'OTA',
-    total_rooms: 2,
-    total_amount: 14400000,
+    total_rooms: 1,
+    total_amount: 9600000,
     created_at: '2024-08-19T13:30:00Z',
     rooms: [
       {
         id: 6,
-        room_number: '201',
-        room_type_name: 'Deluxe Room',
+        room_number: '102',
+        room_type_name: 'Standard Room',
         rate: 2400000,
         total_amount: 9600000
-      },
-      {
-        id: 7,
-        room_number: '202',
-        room_type_name: 'Deluxe Room',
-        rate: 2400000,
-        total_amount: 4800000
       }
     ],
-    can_cancel: false
+    special_requests: 'Honeymoon package',
+    can_cancel: true
   },
   {
     id: 7,
-    reservation_number: 'RSV890123',
+    reservation_number: 'RSV007',
     guest_name: 'Pierre Dubois',
     guest_details: {
       id: 7,
@@ -293,486 +290,234 @@ const MOCK_RESERVATIONS: Reservation[] = [
       phone: '+62-812-1111-0007',
       nationality: 'France'
     },
-    check_in_date: '2024-08-30',
-    check_out_date: '2024-09-03',
+    check_in_date: '2025-08-31',
+    check_out_date: '2025-09-04',
     nights: 4,
-    adults: 2,
-    children: 0,
+    adults: 3,
+    children: 1,
     status: 'CONFIRMED',
     status_display: 'Confirmed',
     booking_source: 'DIRECT',
     total_rooms: 1,
-    total_amount: 18000000,
+    total_amount: 14400000,
     created_at: '2024-08-18T08:15:00Z',
     rooms: [
       {
-        id: 8,
-        room_number: '501',
-        room_type_name: 'Presidential Suite',
-        rate: 4500000,
-        total_amount: 18000000
-      }
-    ],
-    special_requests: 'Champagne and flowers for anniversary',
-    can_cancel: true
-  },
-  {
-    id: 8,
-    reservation_number: 'RSV456789',
-    guest_name: 'Liu Wei',
-    guest_details: {
-      id: 8,
-      full_name: 'Liu Wei',
-      email: 'liu.wei@email.com',
-      phone: '+62-812-1111-0008',
-      nationality: 'China'
-    },
-    check_in_date: '2024-09-01',
-    check_out_date: '2024-09-03',
-    nights: 2,
-    adults: 1,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'WEBSITE',
-    total_rooms: 1,
-    total_amount: 6000000,
-    created_at: '2024-08-25T14:22:00Z',
-    rooms: [
-      {
-        id: 9,
-        room_number: '402',
-        room_type_name: 'Premium Room',
-        rate: 3000000,
-        total_amount: 6000000
-      }
-    ],
-    can_cancel: true
-  },
-  {
-    id: 9,
-    reservation_number: 'RSV012345',
-    guest_name: 'Carlos Silva',
-    guest_details: {
-      id: 9,
-      full_name: 'Carlos Silva',
-      email: 'carlos.silva@email.com',
-      phone: '+62-812-1111-0009',
-      nationality: 'Brazil'
-    },
-    check_in_date: '2024-09-02',
-    check_out_date: '2024-09-05',
-    nights: 3,
-    adults: 2,
-    children: 1,
-    status: 'PENDING',
-    status_display: 'Pending',
-    booking_source: 'OTA',
-    total_rooms: 1,
-    total_amount: 10800000,
-    created_at: '2024-08-26T17:10:00Z',
-    rooms: [
-      {
-        id: 10,
-        room_number: '302',
-        room_type_name: 'Family Suite',
-        rate: 3600000,
-        total_amount: 10800000
-      }
-    ],
-    special_requests: 'High floor room with city view',
-    can_cancel: true
-  },
-  {
-    id: 10,
-    reservation_number: 'RSV678901',
-    guest_name: 'Anna Kowalski',
-    guest_details: {
-      id: 10,
-      full_name: 'Anna Kowalski',
-      email: 'anna.kowalski@email.com',
-      phone: '+62-812-1111-0010',
-      nationality: 'Poland'
-    },
-    check_in_date: '2024-09-03',
-    check_out_date: '2024-09-06',
-    nights: 3,
-    adults: 1,
-    children: 0,
-    status: 'CANCELLED',
-    status_display: 'Cancelled',
-    booking_source: 'DIRECT',
-    total_rooms: 1,
-    total_amount: 7200000,
-    created_at: '2024-08-17T12:05:00Z',
-    rooms: [
-      {
-        id: 11,
-        room_number: '203',
+        id: 7,
+        room_number: '202',
         room_type_name: 'Deluxe Room',
-        rate: 2400000,
-        total_amount: 7200000
-      }
-    ],
-    can_cancel: false
-  },
-  {
-    id: 11,
-    reservation_number: 'RSV345612',
-    guest_name: 'Ahmed Al-Rashid',
-    guest_details: {
-      id: 11,
-      full_name: 'Ahmed Al-Rashid',
-      email: 'ahmed.alrashid@email.com',
-      phone: '+62-812-1111-0011',
-      nationality: 'UAE'
-    },
-    check_in_date: '2024-09-04',
-    check_out_date: '2024-09-08',
-    nights: 4,
-    adults: 2,
-    children: 2,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'WEBSITE',
-    total_rooms: 2,
-    total_amount: 21600000,
-    created_at: '2024-08-16T09:30:00Z',
-    rooms: [
-      {
-        id: 12,
-        room_number: '303',
-        room_type_name: 'Family Suite',
         rate: 3600000,
         total_amount: 14400000
-      },
-      {
-        id: 13,
-        room_number: '304',
-        room_type_name: 'Family Suite',
-        rate: 3600000,
-        total_amount: 7200000
-      }
-    ],
-    special_requests: 'Halal meals and prayer mat',
-    can_cancel: true
-  },
-  {
-    id: 12,
-    reservation_number: 'RSV789456',
-    guest_name: 'Olivia Thompson',
-    guest_details: {
-      id: 12,
-      full_name: 'Olivia Thompson',
-      email: 'olivia.thompson@email.com',
-      phone: '+62-812-1111-0012',
-      nationality: 'Canada'
-    },
-    check_in_date: '2024-09-05',
-    check_out_date: '2024-09-07',
-    nights: 2,
-    adults: 1,
-    children: 0,
-    status: 'CHECKED_IN',
-    status_display: 'Checked In',
-    booking_source: 'OTA',
-    total_rooms: 1,
-    total_amount: 4500000,
-    created_at: '2024-08-28T15:45:00Z',
-    rooms: [
-      {
-        id: 14,
-        room_number: '103',
-        room_type_name: 'Standard Room',
-        rate: 2250000,
-        total_amount: 4500000
-      }
-    ],
-    can_cancel: false
-  },
-  {
-    id: 13,
-    reservation_number: 'RSV123789',
-    guest_name: 'Hans Mueller',
-    guest_details: {
-      id: 13,
-      full_name: 'Hans Mueller',
-      email: 'hans.mueller@email.com',
-      phone: '+62-812-1111-0013',
-      nationality: 'Germany'
-    },
-    check_in_date: '2024-09-06',
-    check_out_date: '2024-09-10',
-    nights: 4,
-    adults: 2,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'DIRECT',
-    total_rooms: 1,
-    total_amount: 12000000,
-    created_at: '2024-08-15T11:20:00Z',
-    rooms: [
-      {
-        id: 15,
-        room_number: '403',
-        room_type_name: 'Premium Room',
-        rate: 3000000,
-        total_amount: 12000000
-      }
-    ],
-    special_requests: 'Extra towels and early breakfast',
-    can_cancel: true
-  },
-  {
-    id: 14,
-    reservation_number: 'RSV456123',
-    guest_name: 'Raj Patel',
-    guest_details: {
-      id: 14,
-      full_name: 'Raj Patel',
-      email: 'raj.patel@email.com',
-      phone: '+62-812-1111-0014',
-      nationality: 'India'
-    },
-    check_in_date: '2024-09-07',
-    check_out_date: '2024-09-09',
-    nights: 2,
-    adults: 3,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'OTA',
-    total_rooms: 2,
-    total_amount: 9600000,
-    created_at: '2024-08-27T10:15:00Z',
-    rooms: [
-      {
-        id: 16,
-        room_number: '204',
-        room_type_name: 'Deluxe Room',
-        rate: 2400000,
-        total_amount: 4800000
-      },
-      {
-        id: 17,
-        room_number: '206',
-        room_type_name: 'Deluxe Room',
-        rate: 2400000,
-        total_amount: 4800000
-      }
-    ],
-    can_cancel: true
-  },
-  {
-    id: 15,
-    reservation_number: 'RSV789123',
-    guest_name: 'Sofia Andersson',
-    guest_details: {
-      id: 15,
-      full_name: 'Sofia Andersson',
-      email: 'sofia.andersson@email.com',
-      phone: '+62-812-1111-0015',
-      nationality: 'Sweden'
-    },
-    check_in_date: '2024-09-08',
-    check_out_date: '2024-09-11',
-    nights: 3,
-    adults: 2,
-    children: 1,
-    status: 'PENDING',
-    status_display: 'Pending',
-    booking_source: 'WEBSITE',
-    total_rooms: 1,
-    total_amount: 10800000,
-    created_at: '2024-08-29T13:40:00Z',
-    rooms: [
-      {
-        id: 18,
-        room_number: '305',
-        room_type_name: 'Family Suite',
-        rate: 3600000,
-        total_amount: 10800000
       }
     ],
     special_requests: 'Baby crib needed',
     can_cancel: true
   },
   {
-    id: 16,
-    reservation_number: 'RSV012789',
-    guest_name: 'Marco Rossi',
+    id: 8,
+    reservation_number: 'RSV008',
+    guest_name: 'Raj Patel',
     guest_details: {
-      id: 16,
-      full_name: 'Marco Rossi',
-      email: 'marco.rossi@email.com',
-      phone: '+62-812-1111-0016',
-      nationality: 'Italy'
+      id: 8,
+      full_name: 'Raj Patel',
+      email: 'raj.patel@email.com',
+      phone: '+62-812-1111-0008',
+      nationality: 'India'
     },
-    check_in_date: '2024-09-09',
-    check_out_date: '2024-09-12',
-    nights: 3,
-    adults: 2,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'DIRECT',
-    total_rooms: 1,
-    total_amount: 13500000,
-    created_at: '2024-08-14T16:55:00Z',
-    rooms: [
-      {
-        id: 19,
-        room_number: '502',
-        room_type_name: 'Presidential Suite',
-        rate: 4500000,
-        total_amount: 13500000
-      }
-    ],
-    special_requests: 'Wine tasting arrangement',
-    can_cancel: true
-  },
-  {
-    id: 17,
-    reservation_number: 'RSV345789',
-    guest_name: 'Jennifer Lee',
-    guest_details: {
-      id: 17,
-      full_name: 'Jennifer Lee',
-      email: 'jennifer.lee@email.com',
-      phone: '+62-812-1111-0017',
-      nationality: 'South Korea'
-    },
-    check_in_date: '2024-09-10',
-    check_out_date: '2024-09-13',
-    nights: 3,
-    adults: 1,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'OTA',
-    total_rooms: 1,
-    total_amount: 9000000,
-    created_at: '2024-08-30T09:25:00Z',
-    rooms: [
-      {
-        id: 20,
-        room_number: '404',
-        room_type_name: 'Premium Room',
-        rate: 3000000,
-        total_amount: 9000000
-      }
-    ],
-    can_cancel: true
-  },
-  {
-    id: 18,
-    reservation_number: 'RSV678345',
-    guest_name: 'David Brown',
-    guest_details: {
-      id: 18,
-      full_name: 'David Brown',
-      email: 'david.brown@email.com',
-      phone: '+62-812-1111-0018',
-      nationality: 'New Zealand'
-    },
-    check_in_date: '2024-09-11',
-    check_out_date: '2024-09-15',
+    check_in_date: '2025-09-01',
+    check_out_date: '2025-09-05',
     nights: 4,
     adults: 2,
-    children: 2,
-    status: 'PENDING',
-    status_display: 'Pending',
+    children: 0,
+    status: 'CONFIRMED',
+    status_display: 'Confirmed',
     booking_source: 'WEBSITE',
-    total_rooms: 2,
-    total_amount: 21600000,
-    created_at: '2024-08-31T14:10:00Z',
-    rooms: [
-      {
-        id: 21,
-        room_number: '306',
-        room_type_name: 'Family Suite',
-        rate: 3600000,
-        total_amount: 14400000
-      },
-      {
-        id: 22,
-        room_number: '104',
-        room_type_name: 'Standard Room',
-        rate: 2250000,
-        total_amount: 7200000
-      }
-    ],
-    special_requests: 'Connecting rooms preferred',
-    can_cancel: true
-  },
-  {
-    id: 19,
-    reservation_number: 'RSV901678',
-    guest_name: 'Isabella Garcia',
-    guest_details: {
-      id: 19,
-      full_name: 'Isabella Garcia',
-      email: 'isabella.garcia@email.com',
-      phone: '+62-812-1111-0019',
-      nationality: 'Mexico'
-    },
-    check_in_date: '2024-09-12',
-    check_out_date: '2024-09-14',
-    nights: 2,
-    adults: 2,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'DIRECT',
-    total_rooms: 1,
-    total_amount: 4800000,
-    created_at: '2024-08-13T08:30:00Z',
-    rooms: [
-      {
-        id: 23,
-        room_number: '207',
-        room_type_name: 'Deluxe Room',
-        rate: 2400000,
-        total_amount: 4800000
-      }
-    ],
-    can_cancel: true
-  },
-  {
-    id: 20,
-    reservation_number: 'RSV234901',
-    guest_name: 'Michael O\'Connor',
-    guest_details: {
-      id: 20,
-      full_name: 'Michael O\'Connor',
-      email: 'michael.oconnor@email.com',
-      phone: '+62-812-1111-0020',
-      nationality: 'Ireland'
-    },
-    check_in_date: '2024-09-13',
-    check_out_date: '2024-09-17',
-    nights: 4,
-    adults: 1,
-    children: 0,
-    status: 'CONFIRMED',
-    status_display: 'Confirmed',
-    booking_source: 'OTA',
     total_rooms: 1,
     total_amount: 12000000,
-    created_at: '2024-08-12T19:45:00Z',
+    created_at: '2024-08-25T14:22:00Z',
     rooms: [
       {
-        id: 24,
-        room_number: '405',
-        room_type_name: 'Premium Room',
+        id: 8,
+        room_number: '302',
+        room_type_name: 'Executive Suite',
         rate: 3000000,
         total_amount: 12000000
       }
     ],
-    special_requests: 'Quiet room for business calls',
+    special_requests: 'Vegetarian meals only',
     can_cancel: true
-  }
+  },
+  {
+    id: 9,
+    reservation_number: 'RSV009',
+    guest_name: 'Anna Kowalski',
+    guest_details: {
+      id: 9,
+      full_name: 'Anna Kowalski',
+      email: 'anna.kowalski@email.com',
+      phone: '+62-812-1111-0009',
+      nationality: 'Poland'
+    },
+    check_in_date: '2025-09-02',
+    check_out_date: '2025-09-06',
+    nights: 4,
+    adults: 1,
+    children: 0,
+    status: 'CHECKED_IN',
+    status_display: 'Checked In',
+    booking_source: 'OTA',
+    total_rooms: 1,
+    total_amount: 9000000,
+    created_at: '2024-08-26T17:10:00Z',
+    rooms: [
+      {
+        id: 9,
+        room_number: '203',
+        room_type_name: 'Deluxe Room',
+        rate: 2250000,
+        total_amount: 9000000
+      }
+    ],
+    special_requests: 'Late checkout requested',
+    can_cancel: false
+  },
+  {
+    id: 10,
+    reservation_number: 'RSV010',
+    guest_name: 'Carlos Silva',
+    guest_details: {
+      id: 10,
+      full_name: 'Carlos Silva',
+      email: 'carlos.silva@email.com',
+      phone: '+62-812-1111-0010',
+      nationality: 'Brazil'
+    },
+    check_in_date: '2025-09-03',
+    check_out_date: '2025-09-07',
+    nights: 4,
+    adults: 4,
+    children: 2,
+    status: 'PENDING',
+    status_display: 'Pending',
+    booking_source: 'DIRECT',
+    total_rooms: 1,
+    total_amount: 21600000,
+    created_at: '2024-08-17T12:05:00Z',
+    rooms: [
+      {
+        id: 10,
+        room_number: '402',
+        room_type_name: 'Family Suite',
+        rate: 5400000,
+        total_amount: 21600000
+      }
+    ],
+    special_requests: 'Large family, need extra beds',
+    can_cancel: true
+  },
+  // Additional bookings to show overlapping dates and different rooms
+  {
+    id: 11,
+    reservation_number: 'RSV011',
+    guest_name: 'Hans Mueller',
+    guest_details: {
+      id: 11,
+      full_name: 'Hans Mueller',
+      email: 'hans.mueller@email.com',
+      phone: '+62-812-1111-0011',
+      nationality: 'Germany'
+    },
+    check_in_date: '2025-08-27',
+    check_out_date: '2025-08-30',
+    nights: 3,
+    adults: 2,
+    children: 0,
+    status: 'CONFIRMED',
+    status_display: 'Confirmed',
+    booking_source: 'DIRECT',
+    total_rooms: 1,
+    total_amount: 9000000,
+    created_at: '2024-08-15T11:20:00Z',
+    rooms: [
+      {
+        id: 11,
+        room_number: '103',
+        room_type_name: 'Standard Room',
+        rate: 3000000,
+        total_amount: 9000000
+      }
+    ],
+    special_requests: 'Early breakfast preferred',
+    can_cancel: true
+  },
+  {
+    id: 12,
+    reservation_number: 'RSV012',
+    guest_name: 'Sofia Andersson',
+    guest_details: {
+      id: 12,
+      full_name: 'Sofia Andersson',
+      email: 'sofia.andersson@email.com',
+      phone: '+62-812-1111-0012',
+      nationality: 'Sweden'
+    },
+    check_in_date: '2025-08-29',
+    check_out_date: '2025-09-02',
+    nights: 4,
+    adults: 2,
+    children: 1,
+    status: 'CONFIRMED',
+    status_display: 'Confirmed',
+    booking_source: 'WEBSITE',
+    total_rooms: 1,
+    total_amount: 16000000,
+    created_at: '2024-08-29T13:40:00Z',
+    rooms: [
+      {
+        id: 12,
+        room_number: '204',
+        room_type_name: 'Deluxe Room',
+        rate: 4000000,
+        total_amount: 16000000
+      }
+    ],
+    special_requests: 'Baby crib needed',
+    can_cancel: true
+  },
+  {
+    id: 13,
+    reservation_number: 'RSV013',
+    guest_name: 'Yuki Tanaka',
+    guest_details: {
+      id: 13,
+      full_name: 'Yuki Tanaka',
+      email: 'yuki.tanaka@email.com',
+      phone: '+62-812-1111-0013',
+      nationality: 'Japan'
+    },
+    check_in_date: '2025-09-01',
+    check_out_date: '2025-09-03',
+    nights: 2,
+    adults: 1,
+    children: 0,
+    status: 'PENDING',
+    status_display: 'Pending',
+    booking_source: 'OTA',
+    total_rooms: 1,
+    total_amount: 6000000,
+    created_at: '2024-08-30T09:25:00Z',
+    rooms: [
+      {
+        id: 13,
+        room_number: '104',
+        room_type_name: 'Standard Room',
+        rate: 3000000,
+        total_amount: 6000000
+      }
+    ],
+    special_requests: 'Quiet room please',
+    can_cancel: true
+  },
 ];
 
 interface Room {
@@ -962,6 +707,14 @@ const BookingsPage = () => {
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [showAddReservation, setShowAddReservation] = useState(false);
   const [wizardStep, setWizardStep] = useState(1);
+  const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list');
+  const [selectedRoomFilter, setSelectedRoomFilter] = useState<string>('all');
+  const [selectedStatusFilter, setSelectedStatusFilter] = useState<string>('all');
+  const [selectedDateRange, setSelectedDateRange] = useState<{ start: Date; end: Date }>({
+    start: new Date('2025-08-26'),
+    end: new Date('2025-09-07') // 12 days to show more booking data
+  });
+  const [showDateRangePicker, setShowDateRangePicker] = useState(false);
   const itemsPerPage = 10;
 
   const wizardSteps = [
@@ -1004,6 +757,26 @@ const BookingsPage = () => {
     loadReservations();
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (openMenuId !== null) {
+        setOpenMenuId(null);
+      }
+      if (showDateRangePicker && !(event.target as Element).closest('.date-range-picker')) {
+        setShowDateRangePicker(false);
+      }
+    };
+
+    if (openMenuId !== null || showDateRangePicker) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [openMenuId, showDateRangePicker]);
+
   // Generate week dates starting from today
   const getWeekDates = () => {
     const today = new Date();
@@ -1018,17 +791,6 @@ const BookingsPage = () => {
 
   const weekDates = getWeekDates();
 
-  const getRoomStatusColor = (status: string) => {
-    switch (status) {
-      case 'AVAILABLE': return 'bg-green-100 text-green-800';
-      case 'OCCUPIED': return 'bg-red-100 text-red-800';
-      case 'CLEANING': return 'bg-yellow-100 text-yellow-800';
-      case 'MAINTENANCE': return 'bg-orange-100 text-orange-800';
-      case 'BLOCKED': return 'bg-purple-100 text-purple-800';
-      case 'OUT_OF_ORDER': return 'bg-gray-100 text-gray-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
 
   const getRoomStatusIcon = (status: string) => {
     const iconProps = { className: "h-4 w-4" };
@@ -1051,6 +813,79 @@ const BookingsPage = () => {
     });
   };
 
+  // Helper functions for calendar view
+  const getCalendarDates = () => {
+    const dates = [];
+    const current = new Date(selectedDateRange.start);
+    
+    while (current <= selectedDateRange.end) {
+      dates.push(new Date(current));
+      current.setDate(current.getDate() + 1);
+    }
+    
+    return dates;
+  };
+
+  const getRoomsForCalendar = () => {
+    // Comprehensive room list for calendar demonstration
+    const calendarRooms = [
+      // Floor 1 - Standard Rooms
+      { number: '101', type: 'Standard Room', status: 'available', maintenance_note: null },
+      { number: '102', type: 'Standard Room', status: 'available', maintenance_note: null },
+      { number: '103', type: 'Standard Room', status: 'available', maintenance_note: null },
+      { number: '104', type: 'Standard Room', status: 'available', maintenance_note: null },
+      
+      // Floor 2 - Deluxe Rooms
+      { number: '201', type: 'Deluxe Room', status: 'available', maintenance_note: null },
+      { number: '202', type: 'Deluxe Room', status: 'available', maintenance_note: null },
+      { number: '203', type: 'Deluxe Room', status: 'cleaning', maintenance_note: null },
+      { number: '204', type: 'Deluxe Room', status: 'available', maintenance_note: null },
+      
+      // Floor 3 - Suites
+      { number: '301', type: 'Junior Suite', status: 'available', maintenance_note: null },
+      { number: '302', type: 'Executive Suite', status: 'maintenance', maintenance_note: 'AC repair' },
+      
+      // Floor 4 - Family Rooms
+      { number: '401', type: 'Family Suite', status: 'available', maintenance_note: null },
+      { number: '402', type: 'Family Suite', status: 'available', maintenance_note: null },
+      
+      // Floor 5 - Presidential Suite
+      { number: '501', type: 'Presidential Suite', status: 'out-of-order', maintenance_note: 'Renovation' },
+    ];
+    
+    return calendarRooms;
+  };
+
+  const getReservationForRoomAndDate = (roomNumber: string, date: Date) => {
+    const dateStr = date.toISOString().split('T')[0];
+    
+    return reservations.find(reservation => {
+      const checkIn = new Date(reservation.check_in_date);
+      const checkOut = new Date(reservation.check_out_date);
+      const currentDate = new Date(dateStr);
+      
+      return reservation.rooms?.some(room => room.room_number === roomNumber) &&
+             currentDate >= checkIn && currentDate < checkOut;
+    });
+  };
+
+  const getFilteredRoomsAndReservations = () => {
+    let filteredRooms = getRoomsForCalendar();
+    let filteredReservations = reservations;
+
+    if (selectedRoomFilter !== 'all') {
+      filteredRooms = filteredRooms.filter(room => room.number === selectedRoomFilter);
+    }
+
+    if (selectedStatusFilter !== 'all') {
+      filteredReservations = filteredReservations.filter(reservation => 
+        reservation.status === selectedStatusFilter
+      );
+    }
+
+    return { filteredRooms, filteredReservations };
+  };
+
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -1061,6 +896,150 @@ const BookingsPage = () => {
       case 'PENDING': return 'bg-yellow-100 text-yellow-800';
       default: return 'bg-gray-100 text-gray-800';
     }
+  };
+
+  const getRoomStatusColor = (status: string) => {
+    switch (status) {
+      case 'available': return 'bg-green-100 text-green-800';
+      case 'occupied': return 'bg-red-100 text-red-800';
+      case 'maintenance': return 'bg-yellow-100 text-yellow-800';
+      case 'cleaning': return 'bg-blue-100 text-blue-800';
+      case 'out-of-order': return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getRoomStatusText = (status: string) => {
+    switch (status) {
+      case 'available': return 'Available';
+      case 'occupied': return 'Occupied';
+      case 'maintenance': return 'Maintenance';
+      case 'cleaning': return 'Cleaning';
+      case 'out-of-order': return 'Out of Order';
+      default: return 'Unknown';
+    }
+  };
+
+  // Generate a consistent color for each guest
+  const getGuestColor = (guestName: string) => {
+    const colors = [
+      'bg-blue-500',
+      'bg-green-500', 
+      'bg-purple-500',
+      'bg-orange-500',
+      'bg-pink-500',
+      'bg-indigo-500',
+      'bg-red-500',
+      'bg-teal-500',
+      'bg-yellow-500',
+      'bg-cyan-500'
+    ];
+    
+    // Simple hash function to get consistent color for same guest
+    let hash = 0;
+    for (let i = 0; i < guestName.length; i++) {
+      hash = guestName.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return colors[Math.abs(hash) % colors.length];
+  };
+
+  // Get booking periods for a room
+  const getBookingPeriods = (roomNumber: string, dates: Date[]) => {
+    const periods: Array<{
+      reservation: any;
+      startIndex: number;
+      endIndex: number;
+      color: string;
+    }> = [];
+
+    const reservationsForRoom = reservations.filter(res => 
+      res.rooms?.some(room => room.room_number === roomNumber)
+    );
+
+    reservationsForRoom.forEach(reservation => {
+      const checkIn = new Date(reservation.check_in_date);
+      const checkOut = new Date(reservation.check_out_date);
+      
+      let startIndex = -1;
+      let endIndex = -1;
+      
+      dates.forEach((date, index) => {
+        if (date >= checkIn && date < checkOut) {
+          if (startIndex === -1) startIndex = index;
+          endIndex = index;
+        }
+      });
+      
+      if (startIndex !== -1 && endIndex !== -1) {
+        periods.push({
+          reservation,
+          startIndex,
+          endIndex,
+          color: getGuestColor(reservation.guest_name)
+        });
+      }
+    });
+
+    return periods;
+  };
+
+  // Render a room row with booking periods
+  const renderRoomRow = (room: any, dates: Date[]) => {
+    const bookingPeriods = getBookingPeriods(room.number, dates);
+    
+    return dates.map((date, dateIndex) => {
+      const isToday = date.toDateString() === new Date().toDateString();
+      
+      // Find if this date is part of any booking period
+      const currentPeriod = bookingPeriods.find(period => 
+        dateIndex >= period.startIndex && dateIndex <= period.endIndex
+      );
+      
+      if (currentPeriod) {
+        const { reservation, startIndex, endIndex, color } = currentPeriod;
+        const isFirstDay = dateIndex === startIndex;
+        const isLastDay = dateIndex === endIndex;
+        const spanLength = endIndex - startIndex + 1;
+        
+        if (isFirstDay) {
+          // First cell of the booking period - render the full booking bar
+          return (
+            <td 
+              key={date.toISOString()} 
+              colSpan={spanLength}
+              className={`py-2 px-1 text-center text-xs border-l border-gray-100 relative ${isToday ? 'bg-blue-50' : ''}`}
+            >
+              <div 
+                className={`${color} text-white px-2 py-3 text-xs font-medium rounded-sm shadow-sm cursor-pointer hover:opacity-90 transition-opacity relative`}
+                title={`${reservation.guest_name} (${reservation.reservation_number})\n${reservation.adults} adults${reservation.children > 0 ? `, ${reservation.children} children` : ''}\n${formatDate(reservation.check_in_date)} - ${formatDate(reservation.check_out_date)}\n${formatCurrency(reservation.total_amount)}`}
+              >
+                <div className="font-semibold truncate">
+                  {reservation.guest_name}
+                </div>
+                <div className="text-xs opacity-90 mt-1">
+                  {reservation.nights}N • {reservation.adults}A{reservation.children > 0 ? `+${reservation.children}C` : ''}
+                </div>
+                <div className={`absolute top-1 right-1 px-1 py-0.5 text-xs rounded ${getStatusColor(reservation.status)} bg-opacity-80`}>
+                  {reservation.status}
+                </div>
+              </div>
+            </td>
+          );
+        } else {
+          // Subsequent cells are hidden due to colSpan
+          return null;
+        }
+      } else {
+        // Available cell
+        return (
+          <td key={date.toISOString()} className={`py-2 px-1 text-center text-xs border-l border-gray-100 ${isToday ? 'bg-blue-50' : ''}`}>
+            <div className="text-gray-300 text-xs py-3">
+              Available
+            </div>
+          </td>
+        );
+      }
+    }).filter(Boolean); // Remove null values
   };
 
   const formatDate = (dateString: string) => {
@@ -1165,8 +1144,33 @@ const BookingsPage = () => {
         </div>
       </div>
 
-      {/* Add Reservation Button */}
-      <div className="flex justify-end mb-6">
+      {/* View Mode Toggle and Add Reservation Button */}
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => setViewMode('list')}
+            className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-colors ${
+              viewMode === 'list'
+                ? 'bg-[#005357] text-white'
+                : 'bg-white text-gray-600 hover:text-[#005357] border border-gray-200'
+            }`}
+          >
+            <List className="h-4 w-4" />
+            <span>List View</span>
+          </button>
+          <button
+            onClick={() => setViewMode('calendar')}
+            className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-colors ${
+              viewMode === 'calendar'
+                ? 'bg-[#005357] text-white'
+                : 'bg-white text-gray-600 hover:text-[#005357] border border-gray-200'
+            }`}
+          >
+            <CalendarDays className="h-4 w-4" />
+            <span>Calendar View</span>
+          </button>
+        </div>
+        
         <button 
           onClick={() => setShowAddReservation(true)}
           className="flex items-center space-x-2 bg-[#005357] text-white px-4 py-4 text-sm font-bold hover:bg-[#004147] transition-colors"
@@ -1176,17 +1180,198 @@ const BookingsPage = () => {
         </button>
       </div>
 
-      {/* Reservations Table */}
-      <div className="bg-white shadow">
-        {/* Table Header */}
-        <div className="p-6">
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900">All Reservations</h3>
-            <p className="text-sm text-gray-600 mt-1">
-              {reservations.length} total reservations • Page {currentPage} of {getTotalPages()}
-            </p>
+
+      {/* Calendar View */}
+      {viewMode === 'calendar' ? (
+        <div className="bg-white shadow">
+          {/* Table Header */}
+          <div className="p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900">All Reservations</h3>
+                <p className="text-sm text-gray-600 mt-1">
+                  Calendar view: {formatCalendarDate(selectedDateRange.start)} - {formatCalendarDate(selectedDateRange.end)}
+                </p>
+              </div>
+              <div className="flex items-center space-x-4">
+                {/* Search Form */}
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search reservations..."
+                    className="w-64 pl-10 pr-3 py-2 border border-gray-300 focus:ring-[#005357] focus:border-[#005357] text-sm"
+                  />
+                </div>
+                
+                {/* Date Range Picker */}
+                <div className="relative">
+                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 z-10" />
+                  <input 
+                    type="text" 
+                    value={`${selectedDateRange.start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${selectedDateRange.end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`}
+                    readOnly
+                    placeholder="Select date range"
+                    className="w-48 pl-10 pr-3 py-2 bg-white border border-gray-300 text-sm focus:ring-[#005357] focus:outline-none cursor-pointer"
+                    onClick={() => setShowDateRangePicker(!showDateRangePicker)}
+                  />
+                  
+                  {/* Date Range Picker */}
+                  {showDateRangePicker && (
+                    <div className="absolute top-full mt-1 right-0 bg-white border border-gray-200 shadow-lg z-50 p-4 date-range-picker">
+                      <div className="grid grid-cols-2 gap-4">
+                        {/* Start Date Calendar */}
+                        <div>
+                          <h4 className="text-sm font-medium text-gray-700 mb-2">Start Date</h4>
+                          <input 
+                            type="date" 
+                            value={selectedDateRange.start.toISOString().split('T')[0]}
+                            onChange={(e) => setSelectedDateRange(prev => ({ ...prev, start: new Date(e.target.value) }))}
+                            className="w-full px-3 py-2 border border-gray-200 text-sm focus:ring-2 focus:ring-[#005357] focus:outline-none"
+                          />
+                        </div>
+                        
+                        {/* End Date Calendar */}
+                        <div>
+                          <h4 className="text-sm font-medium text-gray-700 mb-2">End Date</h4>
+                          <input 
+                            type="date" 
+                            value={selectedDateRange.end.toISOString().split('T')[0]}
+                            onChange={(e) => setSelectedDateRange(prev => ({ ...prev, end: new Date(e.target.value) }))}
+                            className="w-full px-3 py-2 border border-gray-200 text-sm focus:ring-2 focus:ring-[#005357] focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                      
+                      {/* Quick Select Options */}
+                      <div className="mt-4 pt-3 border-t border-gray-200">
+                        <div className="flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const today = new Date();
+                              const nextWeek = new Date(today.getTime() + 6 * 24 * 60 * 60 * 1000);
+                              setSelectedDateRange({ start: today, end: nextWeek });
+                            }}
+                            className="px-3 py-1 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                          >
+                            Next 7 days
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const today = new Date();
+                              const nextTwoWeeks = new Date(today.getTime() + 13 * 24 * 60 * 60 * 1000);
+                              setSelectedDateRange({ start: today, end: nextTwoWeeks });
+                            }}
+                            className="px-3 py-1 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                          >
+                            Next 14 days
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const today = new Date();
+                              const nextMonth = new Date(today.getTime() + 29 * 24 * 60 * 60 * 1000);
+                              setSelectedDateRange({ start: today, end: nextMonth });
+                            }}
+                            className="px-3 py-1 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                          >
+                            Next 30 days
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {/* Apply/Close buttons */}
+                      <div className="mt-4 flex justify-end space-x-2">
+                        <button
+                          type="button"
+                          onClick={() => setShowDateRangePicker(false)}
+                          className="px-3 py-1 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setShowDateRangePicker(false)}
+                          className="px-3 py-1 bg-[#005357] text-white text-sm hover:bg-[#004147] transition-colors"
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="w-8 h-8 bg-[#005357] flex items-center justify-center">
+                  <CalendarDays className="h-4 w-4 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <div style={{ minWidth: `${272 + (getCalendarDates().length * 100)}px` }}>
+              <table className="w-full">
+              <thead>
+                <tr className="bg-[#005357]">
+                  <th className="text-left py-3 px-4 text-sm font-bold text-white uppercase tracking-wider w-[152px] sticky left-0 bg-[#005357] z-20">
+                    Room
+                  </th>
+                  <th className="text-center py-3 px-4 text-sm font-bold text-white uppercase tracking-wider w-[120px] sticky left-[152px] bg-[#005357] z-20 shadow-lg" style={{boxShadow: '4px 0 6px -1px rgba(0, 0, 0, 0.1)'}}>
+                    Status
+                  </th>
+                  {getCalendarDates().map((date) => (
+                    <th key={date.toISOString()} className="text-center py-3 px-2 text-xs font-bold text-white uppercase tracking-wider min-w-[100px]">
+                      <div>
+                        <div>{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
+                        <div>{date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-100">
+                {getFilteredRoomsAndReservations().filteredRooms.map((room) => (
+                  <tr key={room.number} className="hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-4 font-medium text-gray-900 w-[152px] sticky left-0 bg-white border-r border-gray-200 z-10">
+                      <div>
+                        <div className="font-bold">Room {room.number}</div>
+                        <div className="text-sm text-gray-600">{room.type}</div>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 text-center w-[120px] sticky left-[152px] bg-white border-r border-gray-200 z-10" style={{boxShadow: '4px 0 6px -1px rgba(0, 0, 0, 0.1)'}}>
+                      <div className="flex flex-col items-center space-y-1">
+                        <span className={`px-2 py-1 text-xs font-medium rounded ${getRoomStatusColor(room.status || 'available')}`}>
+                          {getRoomStatusText(room.status || 'available')}
+                        </span>
+                        {room.maintenance_note && (
+                          <div className="text-xs text-gray-500 text-center max-w-[80px] truncate" title={room.maintenance_note}>
+                            {room.maintenance_note}
+                          </div>
+                        )}
+                      </div>
+                    </td>
+{renderRoomRow(room, getCalendarDates())}
+                  </tr>
+                ))}
+              </tbody>
+              </table>
+            </div>
           </div>
         </div>
+      ) : (
+        /* List View - Existing Reservations Table */
+        <div className="bg-white shadow">
+          {/* Table Header */}
+          <div className="p-6">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900">All Reservations</h3>
+              <p className="text-sm text-gray-600 mt-1">
+                {reservations.length} total reservations • Page {currentPage} of {getTotalPages()}
+              </p>
+            </div>
+          </div>
           
           {/* Advanced Table */}
           <div className="overflow-x-auto">
@@ -1555,6 +1740,7 @@ const BookingsPage = () => {
             </div>
           )}
         </div>
+      )}
 
       {/* Add Reservation Modal */}
       <Dialog.Root open={showAddReservation} onOpenChange={setShowAddReservation}>

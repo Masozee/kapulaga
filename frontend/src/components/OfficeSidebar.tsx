@@ -8,24 +8,20 @@ import * as Tooltip from '@radix-ui/react-tooltip';
 import {
   Building2,
   Users,
-  Headphones,
-  Hotel,
-  Calendar,
   CreditCard,
   FileText,
   Settings,
-  UserCheck,
-  Bed,
-  DoorOpen,
-  Package,
   UserCog,
   Clock,
   TrendingUp,
-  HelpCircle,
-  Wrench,
-  Shield,
   Home,
-  User
+  User,
+  BarChart3,
+  Calendar,
+  DollarSign,
+  Shield,
+  ArrowLeft,
+  Package
 } from 'lucide-react';
 
 interface MenuItem {
@@ -35,32 +31,32 @@ interface MenuItem {
   badge?: string;
 }
 
-const Sidebar = () => {
+const OfficeSidebar = () => {
   const pathname = usePathname();
 
   const mainNavItems: MenuItem[] = [
-    { name: 'Dashboard', icon: Home, href: '/' },
+    { name: 'Office Dashboard', icon: Building2, href: '/office' },
+    { name: 'Back to Main', icon: ArrowLeft, href: '/' },
   ];
 
-  const frontlineActions: MenuItem[] = [
-    { name: 'Bookings', icon: Calendar, href: '/bookings', badge: '12' },
-    { name: 'Room Status', icon: Bed, href: '/rooms' },
-    { name: 'Guest Profiles', icon: Users, href: '/guests' },
-    { name: 'Complaints', icon: HelpCircle, href: '/complaints', badge: '5' },
-    { name: 'Housekeeping', icon: Package, href: '/housekeeping', badge: '8' },
-    { name: 'Maintenance', icon: Wrench, href: '/maintenance' },
-    { name: 'Payments', icon: CreditCard, href: '/payments' },
-    { name: 'Reports', icon: FileText, href: '/reports' },
+  const officeActions: MenuItem[] = [
+    { name: 'Analytics', icon: BarChart3, href: '/office/analytics' },
+    { name: 'Employees', icon: Users, href: '/office/employees' },
+    { name: 'Financial', icon: DollarSign, href: '/office/financial' },
+    { name: 'Warehouse', icon: Package, href: '/office/warehouse' },
+    { name: 'Schedules', icon: Calendar, href: '/office/schedules' },
+    { name: 'Reports', icon: FileText, href: '/office/reports' },
+    { name: 'Administration', icon: UserCog, href: '/office/admin' },
   ];
 
   const bottomActions: MenuItem[] = [
-    { name: 'Office', icon: Building2, href: '/office' },
-    { name: 'Settings', icon: Settings, href: '/settings' },
+    { name: 'Office Settings', icon: Settings, href: '/office/settings' },
     { name: 'Profile', icon: User, href: '/profile' },
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
+    if (href === '/office') return pathname === '/office';
+    if (href === '/') return false; // Don't highlight main dashboard when in office
     return pathname.startsWith(href);
   };
 
@@ -71,7 +67,7 @@ const Sidebar = () => {
         <div className="p-4">
           <div className="flex items-center justify-center">
             <div className="w-10 h-10 bg-gray-100 flex items-center justify-center">
-              <Hotel className="h-6 w-6 text-gray-600" />
+              <Building2 className="h-6 w-6 text-gray-600" />
             </div>
           </div>
         </div>
@@ -125,9 +121,9 @@ const Sidebar = () => {
 
           <Separator.Root className="my-4 mx-2 bg-gray-200 h-px" />
 
-          {/* Frontline Operations */}
+          {/* Office Operations */}
           <div className="space-y-1 px-2">
-            {frontlineActions.map((item) => {
+            {officeActions.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.href);
               
@@ -219,4 +215,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default OfficeSidebar;
