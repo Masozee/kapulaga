@@ -920,27 +920,16 @@ const BookingsPage = () => {
     }
   };
 
-  // Generate a consistent color for each guest
-  const getGuestColor = (guestName: string) => {
-    const colors = [
-      'bg-blue-500',
-      'bg-green-500', 
-      'bg-purple-500',
-      'bg-orange-500',
-      'bg-pink-500',
-      'bg-indigo-500',
-      'bg-red-500',
-      'bg-teal-500',
-      'bg-yellow-500',
-      'bg-cyan-500'
-    ];
-    
-    // Simple hash function to get consistent color for same guest
-    let hash = 0;
-    for (let i = 0; i < guestName.length; i++) {
-      hash = guestName.charCodeAt(i) + ((hash << 5) - hash);
+  // Generate a consistent color for each reservation based on status
+  const getReservationColor = (reservation: Reservation) => {
+    switch (reservation.status) {
+      case 'CONFIRMED': return 'bg-blue-500';
+      case 'CHECKED_IN': return 'bg-green-500';
+      case 'CHECKED_OUT': return 'bg-gray-500';
+      case 'CANCELLED': return 'bg-red-500';
+      case 'PENDING': return 'bg-yellow-500';
+      default: return 'bg-gray-500';
     }
-    return colors[Math.abs(hash) % colors.length];
   };
 
   // Get booking periods for a room
@@ -975,7 +964,7 @@ const BookingsPage = () => {
           reservation,
           startIndex,
           endIndex,
-          color: getGuestColor(reservation.guest_name)
+          color: getReservationColor(reservation)
         });
       }
     });
@@ -1010,7 +999,7 @@ const BookingsPage = () => {
               className={`py-2 px-1 text-center text-xs border-l border-gray-100 relative ${isToday ? 'bg-blue-50' : ''}`}
             >
               <div 
-                className={`${color} text-white px-2 py-3 text-xs font-medium rounded-sm shadow-sm cursor-pointer hover:opacity-90 transition-opacity relative`}
+                className={`${color} text-white px-2 py-3 text-xs font-medium shadow-sm cursor-pointer hover:opacity-90 transition-opacity relative`}
                 title={`${reservation.guest_name} (${reservation.reservation_number})\n${reservation.adults} adults${reservation.children > 0 ? `, ${reservation.children} children` : ''}\n${formatDate(reservation.check_in_date)} - ${formatDate(reservation.check_out_date)}\n${formatCurrency(reservation.total_amount)}`}
               >
                 <div className="font-semibold truncate">
@@ -1019,7 +1008,7 @@ const BookingsPage = () => {
                 <div className="text-xs opacity-90 mt-1">
                   {reservation.nights}N • {reservation.adults}A{reservation.children > 0 ? `+${reservation.children}C` : ''}
                 </div>
-                <div className={`absolute top-1 right-1 px-1 py-0.5 text-xs rounded ${getStatusColor(reservation.status)} bg-opacity-80`}>
+                <div className={`absolute top-1 right-1 px-1 py-0.5 text-xs ${getStatusColor(reservation.status)} bg-opacity-80`}>
                   {reservation.status}
                 </div>
               </div>
@@ -1342,7 +1331,7 @@ const BookingsPage = () => {
                     </td>
                     <td className="py-4 px-4 text-center w-[120px] sticky left-[152px] bg-white border-r border-gray-200 z-10" style={{boxShadow: '4px 0 6px -1px rgba(0, 0, 0, 0.1)'}}>
                       <div className="flex flex-col items-center space-y-1">
-                        <span className={`px-2 py-1 text-xs font-medium rounded ${getRoomStatusColor(room.status || 'available')}`}>
+                        <span className={`px-2 py-1 text-xs font-medium ${getRoomStatusColor(room.status || 'available')}`}>
                           {getRoomStatusText(room.status || 'available')}
                         </span>
                         {room.maintenance_note && (

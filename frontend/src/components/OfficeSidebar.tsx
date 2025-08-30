@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import * as Separator from '@radix-ui/react-separator';
 import * as Tooltip from '@radix-ui/react-tooltip';
@@ -66,8 +67,14 @@ const OfficeSidebar = () => {
         {/* Header */}
         <div className="p-4">
           <div className="flex items-center justify-center">
-            <div className="w-10 h-10 bg-gray-100 flex items-center justify-center">
-              <Building2 className="h-6 w-6 text-gray-600" />
+            <div className="w-10 h-10 bg-gray-50 flex items-center justify-center p-1">
+              <Image
+                src="/logo.png"
+                alt="Kapulaga Hotel Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
             </div>
           </div>
         </div>

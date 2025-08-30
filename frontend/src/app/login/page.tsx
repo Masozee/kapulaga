@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Eye, EyeOff, Hotel, Lock, Mail, User, Shield, CheckCircle } from 'lucide-react';
 
 const LoginPage = () => {
@@ -60,8 +61,14 @@ const LoginPage = () => {
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div>
             <div className="flex items-center space-x-3 mb-8">
-              <div className="w-12 h-12 bg-[#005357] flex items-center justify-center">
-                <Hotel className="h-7 w-7 text-white" />
+              <div className="w-12 h-12 bg-gray-50 flex items-center justify-center p-1">
+                <Image
+                  src="/logo.png"
+                  alt="Kapulaga Hotel Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Kapulaga</h1>

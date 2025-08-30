@@ -216,7 +216,7 @@ const PaymentsPage = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Guest Information Card */}
             {(guestName || roomNumber) && (
-              <div className="bg-white shadow border">
+              <div className="bg-white shadow">
                 <div className="p-6 border-b border-gray-200">
                   <div className="flex items-center justify-between">
                     <div>
@@ -252,7 +252,7 @@ const PaymentsPage = () => {
             )}
 
             {/* Quick Services */}
-            <div className="bg-white shadow border">
+            <div className="bg-white shadow">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex items-center justify-between">
                   <div>
@@ -270,10 +270,10 @@ const PaymentsPage = () => {
                     <button
                       key={index}
                       onClick={() => addLineItem(service)}
-                      className="p-3 bg-white border hover:border-[#005357] hover:shadow-md transition-all text-left"
+                      className="group p-3 bg-white border hover:border-[#005357] hover:bg-[#005357] hover:text-white hover:shadow-md transition-all text-left"
                     >
                       <div className="font-medium text-sm">{service.name}</div>
-                      <div className="text-[#005357] font-bold text-sm mt-1">
+                      <div className="text-[#005357] group-hover:text-white font-bold text-sm mt-1">
                         {formatCurrency(service.price)}
                       </div>
                     </button>
